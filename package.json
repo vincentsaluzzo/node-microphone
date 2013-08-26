@@ -1,0 +1,8 @@
+{
+    "name": "node-microphone",
+    "description": "node-microphone using microphone and Stream API to create a WAV audio stream",
+    "version": "0.1.0",
+    "author": "Vincent Saluzzo",
+    "dependencies": {},
+    "devDependencies": {}
+}
