@@ -1,7 +1,7 @@
 {
-    "name": "node-microphone",
-    "description": "node-microphone using microphone and Stream API to create a WAV audio stream",
-    "version": "0.1.0",
+    "name": "microphone",
+    "description": "microphone is a simple module that use `arecord` ALSA tools method to capture sound from a USB Microphone",
+    "version": "1.0.1",
     "author": "Vincent Saluzzo",
     "dependencies": {},
     "devDependencies": {}
