@@ -25,5 +25,5 @@ var stop = function() {
 
 exports.audioStream = audio;
 exports.infoStream = info;
-exports.startCapture() = start;
-exports.stopCapture() = stop;
+exports.startCapture = start;
+exports.stopCapture = stop;
