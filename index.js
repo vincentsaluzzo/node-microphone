@@ -1,17 +1,32 @@
 var spawn = require('child_process').spawn
 var PassThrough = require('stream').PassThrough;
+var lame = require('lame');
 
 var ps = null;
 
 var audio = new PassThrough;
 var info = new PassThrough;
 
-var start = function() {
+var start = function(options) {
     if(ps == null) {
         ps = spawn('arecord', ['-D', 'plughw:1,0', '-f', 'dat']);
         
-        ps.stdout.pipe(audio);
-        ps.stderr.pipe(info);
+        if(options.mp3output === true) {
+            var encoder = new lame.Encoder( {
+                channels: 2,
+                bitDepth: 16,
+                sampleRate: 44100
+            });
+
+            ps.stdout.pipe(encoder);
+            encoder.pipe(audio);
+            ps.stderr.pipe(info);
+            
+        } else {
+            ps.stdout.pipe(audio);
+            ps.stderr.pipe(info);
+            
+        }
     }
 };
 

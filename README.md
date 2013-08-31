@@ -30,9 +30,14 @@ A simple example which capture sound and redirect it to stdout.
 
 ## API
 
-#### startCapture()
+#### startCapture(options)
 
 Start the process and pipe the stdout of ALSA `arecord` tool to audioStream
+
+By default, the outputing sound are PCM WAVE format, if you want a MP3 format 
+pass `true` as `mp3Output` in the options passed in arguments. 
+
+(Example : `mic.startCapture({'mp3output' : true});`)
 
 #### stopCapture();
 
