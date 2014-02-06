@@ -8,6 +8,8 @@ var audio = new PassThrough;
 var info = new PassThrough;
 
 var start = function(options) {
+    options = options || {};
+    
     if(ps == null) {
         ps = spawn('arecord', ['-D', 'plughw:1,0', '-f', 'dat']);
         
