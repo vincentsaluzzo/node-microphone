@@ -1,3 +1,4 @@
+var isMac = require('os').type() == 'Darwin';
 var spawn = require('child_process').spawn
 var PassThrough = require('stream').PassThrough;
 var lame = require('lame');
@@ -8,9 +9,12 @@ var audio = new PassThrough;
 var info = new PassThrough;
 
 var start = function(options) {
+    options = options || {};
     if(ps == null) {
-        ps = spawn('arecord', ['-D', 'plughw:1,0', '-f', 'dat']);
-        
+        ps = isMac
+        ? spawn('sox', ['-d', '-t', 'dat', '-p'])
+        : spawn('arecord', ['-D', 'plughw:1,0', '-f', 'dat']);
+
         if(options.mp3output === true) {
             var encoder = new lame.Encoder( {
                 channels: 2,
@@ -21,11 +25,11 @@ var start = function(options) {
             ps.stdout.pipe(encoder);
             encoder.pipe(audio);
             ps.stderr.pipe(info);
-            
+
         } else {
             ps.stdout.pipe(audio);
             ps.stderr.pipe(info);
-            
+
         }
     }
 };
