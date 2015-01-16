@@ -1,21 +1,30 @@
 {
-    "name": "microphone",
-    "description": "microphone is a simple module that use `arecord` ALSA tools method to capture sound from a USB Microphone",
-    "version": "1.0.6",
-    "author": "Vincent Saluzzo",
-		"contributors": [{
-			"name": "JiaJian",
-			"email": "its@jiajian.me"
-		}],
-    "dependencies": {
-        "lame" : "1.0.3"
-    },
-    "devDependencies": {},
-    "homepage": "http://github.com/vincentsaluzzo/node-microphone",
-    "keywords": ["microphone", "alsa", "mic", "record", "audio", "capture"],
-    "repository" : {
-        "type": "git",
-        "url": "https://github.com/vincentsaluzzo/node-microphone.git"
-    },
-    "bugs" : "http://github.com/vincentsaluzzo/node-microphone/issues"
+  "name": "microphone",
+  "description": "microphone is a simple module that use `arecord` ALSA tools method to capture sound from a USB Microphone",
+  "version": "1.0.7",
+  "author": "Vincent Saluzzo",
+  "contributors": [
+    {
+      "name": "JiaJian",
+      "email": "its@jiajian.me"
+    }
+  ],
+  "dependencies": {
+    "lame": "1.0.3"
+  },
+  "devDependencies": {},
+  "homepage": "http://github.com/vincentsaluzzo/node-microphone",
+  "keywords": [
+    "microphone",
+    "alsa",
+    "mic",
+    "record",
+    "audio",
+    "capture"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vincentsaluzzo/node-microphone.git"
+  },
+  "bugs": "http://github.com/vincentsaluzzo/node-microphone/issues"
 }
