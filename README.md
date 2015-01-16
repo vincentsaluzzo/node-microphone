@@ -6,13 +6,16 @@
 </tr>
 <tr>
 <td>Description</td>
-<td>microphone is a simple module that use `arecord` ALSA tools method to capture sound from a USB Microphone</td>
+<td>microphone is a simple module that use `arecord` ALSA tools on Linux or SoX on OSX & Windows method to capture sound from a USB Microphone</td>
 </tr>
 </table>
 
 ## Dependencies
 
-This library need ALSA tools installed on the machine (`sudo apt-get install alsa-utils`)
+This library need
+
+* ALSA tools installed on the machine (`sudo apt-get install alsa-utils`) **for Linux**
+* SoX Tools installed on the machine **for Windows or OSX**
 
 ## Usage
 
@@ -50,6 +53,13 @@ Give the audio stream where sound captured will be pushed
 #### infoStream
 
 Give an information stream which display informations printed on `stderr` by the process
+
+## CONTRIBUTORS
+
+* @JiaJian *(for Windows support)*
+* @guileen *(for OSX support)*
+* @jrf0110
+
 
 ## LICENSE
 
