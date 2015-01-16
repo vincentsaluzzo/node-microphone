@@ -10,6 +10,7 @@ var info = new PassThrough;
 
 var start = function(options) {
     options = options || {};
+    
     if(ps == null) {
         ps = isMacOrWin
         ? spawn('sox', ['-d', '-t', 'dat', '-p'])
