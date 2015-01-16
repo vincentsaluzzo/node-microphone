@@ -1,8 +1,12 @@
 {
     "name": "microphone",
     "description": "microphone is a simple module that use `arecord` ALSA tools method to capture sound from a USB Microphone",
-    "version": "1.0.3",
+    "version": "1.0.6",
     "author": "Vincent Saluzzo",
+		"contributors": [{
+			"name": "JiaJian",
+			"email": "its@jiajian.me"
+		}],
     "dependencies": {
         "lame" : "1.0.3"
     },
