@@ -1,4 +1,4 @@
-var isMac = require('os').type() == 'Darwin';
+var isMacOrWin = require('os').type() == 'Darwin' || require('os').type().indexOf('Windows') > -1;
 var spawn = require('child_process').spawn
 var PassThrough = require('stream').PassThrough;
 var lame = require('lame');
@@ -11,7 +11,7 @@ var info = new PassThrough;
 var start = function(options) {
     options = options || {};
     if(ps == null) {
-        ps = isMac
+        ps = isMacOrWin
         ? spawn('sox', ['-d', '-t', 'dat', '-p'])
         : spawn('arecord', ['-D', 'plughw:1,0', '-f', 'dat']);
 
@@ -40,7 +40,6 @@ var stop = function() {
         ps = null;
     }
 };
-
 
 exports.audioStream = audio;
 exports.infoStream = info;
