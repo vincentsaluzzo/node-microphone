@@ -1,7 +1,7 @@
 ## Information
 
 <table>
-<tr> 
+<tr>
 <td>Package</td><td>microphone</td>
 </tr>
 <tr>
@@ -24,9 +24,9 @@ This library need
 A simple example which capture sound and redirect it to stdout.
 
     var mic = require('microphone');
-    
+
     mic.startCapture();
-    
+
     mic.audioStream.on('data', function(data) {
         process.stdout.write(data);
     });
@@ -37,14 +37,21 @@ A simple example which capture sound and redirect it to stdout.
 
 Start the process and pipe the stdout of ALSA `arecord` tool to audioStream
 
-By default, the outputing sound are PCM WAVE format, if you want a MP3 format 
-pass `true` as `mp3Output` in the options passed in arguments. 
+By default, the outputing sound are PCM WAVE format, if you want a MP3 format
+pass `true` as `mp3Output` in the options passed in arguments.
 
 (Example : `mic.startCapture({'mp3output' : true});`)
 
+Other options which can be specified include:
+* alsa_format - Example: 'S16_LE' See arecord --help for a list of recognized formats.
+* alsa_device - Example: 'hw:1,0'
+* alsa_addn_args - Example: ['arg1', 'arg2']
+* sox_format - Example: 'dat'
+* sox_addn_args - Example: ['arg1', 'arg2']
+
 #### stopCapture();
 
-Stop the process 
+Stop the process
 
 #### audioStream
 
