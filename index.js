@@ -14,7 +14,7 @@ var start = function(options) {
     if(ps == null) {
         ps = isMacOrWin
         ? spawn('sox', ['-d', '-t', 'dat', '-p'])
-        : spawn('arecord', ['-D', 'plughw:1,0', '-f', 'dat']);
+        : spawn('arecord', ['-D', options.device || 'plughw:1,0', '-f', 'dat']);
 
         if(options.mp3output === true) {
             var encoder = new lame.Encoder( {
